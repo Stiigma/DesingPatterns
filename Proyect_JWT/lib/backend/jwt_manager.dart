@@ -1,22 +1,37 @@
-class JwtManeger(){
-    
-    //unique Instance by Singleton Patron
-    static final JwtManeger _instance = 
+import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 
+class JwtManager {
+  // Instancia estática privada
+  static final JwtManager _instance = JwtManager._internal();
 
+  // Constructor privado
+  JwtManager._internal();
 
-    //Contructor private w dart
-    JwtManeger._instance(); 
+  // Método para acceder a la instancia única
+  factory JwtManager() {
+    return _instance;
+  }
 
-    factory JwtManeger(){
-        return _instance;
+  // Método para generar el JWT
+  String generateToken(String userId) {
+    final jwt = JWT({
+      'id': userId,
+      'exp': DateTime.now().add(Duration(hours: 1)).millisecondsSinceEpoch ~/ 1000, 
+    });
+
+    return jwt.sign(SecretKey('Stiigma'));
+  }
+
+// Método para verificar el JWT
+  String verifyToken(String token) {
+    try {
+      final jwt = JWT.verify(token, SecretKey('Stiigma'));
+      return "Token valido";
+    } catch (e) {
+      if (e is JWTExpiredException) {
+        return "Token expirado, inicie sesión nuevamente.";
+      }
+      return "Token inválido.";
     }
-
-
-    //method generative JWT
-
-    String GenerativeToken(String userId){
-        final jwt = JWT({'sub': userId}, issuer: 'app');
-        return jwt.sing(SecretKey('IgrisGod22!'));
-    }
+  }
 }

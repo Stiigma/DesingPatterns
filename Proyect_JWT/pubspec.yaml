@@ -1,0 +1,9 @@
+name: proyecto_jwt
+description: Un proyecto para probar JWT en Dart
+
+environment:
+  sdk: '^3.7.0'
+
+dependencies:
+  dart_jsonwebtoken: ^2.4.1
+  http: ^1.3.0
