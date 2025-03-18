@@ -1,3 +1,4 @@
 pubspec.lock
 .dart_tool/
 ./lib/backend/user_manager.dart
+Command/Command_venv
