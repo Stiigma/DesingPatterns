@@ -1,0 +1,5 @@
+Reporte de Asistencia
+
+Ana: 90.00% de asistencia
+Luis: 75.00% de asistencia
+Carlos: 100.00% de asistencia

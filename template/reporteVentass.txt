@@ -1,0 +1,7 @@
+Reporte de Ventas
+
+Laptop: 4 unidades x $1200 = $4800
+Mouse: 10 unidades x $25 = $250
+Teclado: 5 unidades x $45 = $225
+
+Total General: $5275
